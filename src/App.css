@@ -1,0 +1,191 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: white;
+}
+
+.home-container {
+  padding: 24px 16px 80px;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome-sub {
+  color: #aaa;
+  font-size: 14px;
+  margin: 0;
+}
+
+.welcome-name {
+  margin: 4px 0 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.search-box {
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search-icon {
+  color: #555;
+  margin-right: 8px;
+}
+
+.search-input {
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 14px;
+  flex: 1;
+  outline: none;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.movie-card {
+  margin-bottom: 32px;
+}
+
+.movie-image {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.movie-title {
+  margin: 10px 0 4px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.movie-date {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.cinema-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.see-all {
+  font-size: 14px;
+  color: #888;
+}
+
+.cinema-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.cinema-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cinema-card img {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.cinema-info h3 {
+  margin: 4px 0 2px;
+  font-size: 16px;
+}
+
+.cinema-info p {
+  color: #aaa;
+  font-size: 13px;
+  margin: 0;
+}
+
+.cinema-location {
+  display: flex;
+  align-items: center;
+  color: #4da3ff;
+  font-size: 13px;
+  gap: 4px;
+}
+
+.cinema-rating {
+  display: flex;
+  align-items: center;
+  color: gold;
+  font-weight: 500;
+  font-size: 15px;
+  margin-left: auto;
+  gap: 4px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: space-around;
+  padding: 14px 0;
+  font-size: 22px;
+  color: #666;
+}
+
+.bottom-nav .active {
+  color: #4da3ff;
+}
+
+
+/**************************_____footer___________________************************/
+
+
+  .footer{
+   
+  text-align: center;
+  padding: 2em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+ background-color: #121212;
+ display: flex;
+ justify-content: space-evenly;
+ align-items: center;
+ 
+}
+ .search-bar{
+    margin: 2em 1em;
+  }
+  .search-input{
+   height: 1.3em;
+    border: black 2px solid;
+    outline: none;
+    resize: none;
+    background-color: blue;
+    color:white;
+  }
+ 
