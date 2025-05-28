@@ -1,191 +1,257 @@
-body {
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #121212;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background-color: white;
+margin: 0;
+padding: 0;
+}
+
+/*.......................................home.css............................................*/
+
+
+.home-container_section {
+  margin: 0 auto;
+  width: 480px;
+  overflow: hidden;
+  background-color: #12151d;
   color: white;
+  font-family: Arial, sans-serif;
 }
 
-.home-container {
-  padding: 24px 16px 80px;
-}
-
-.home-header {
+/* Header */
+.header_profile {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2em;
 }
 
-.welcome-sub {
-  color: #aaa;
-  font-size: 14px;
-  margin: 0;
+.username {
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
-.welcome-name {
-  margin: 4px 0 0;
-  font-size: 20px;
-  font-weight: bold;
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  object-fit: cover;
 }
 
-.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
-.search-box {
-  background-color: #1f1f1f;
-  border-radius: 12px;
-  padding: 8px 12px;
+/* Search Bar */
+.search-bar-home {
   display: flex;
   align-items: center;
-  margin: 20px 0;
+  margin: 0 1.5rem 0.1em;
+  background-color: #1e2230;
+  padding: 0.75rem 1em;
+  border-radius: 15px;
 }
 
-.search-icon {
-  color: #555;
-  margin-right: 8px;
-}
-
-.search-input {
+.search-bar-home input {
+  flex: 1;
   background: none;
   border: none;
-  color: #ccc;
-  font-size: 14px;
-  flex: 1;
+  color: white;
+  font-size: 1rem;
   outline: none;
 }
 
-.section-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 12px;
+.search-bar-home button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.movie-card {
-  margin-bottom: 32px;
+
+/* Coming Soon Section */
+.coming-soon {
+ margin: 0 1em;
+  
 }
 
-.movie-image {
+.coming-soon h2 {
+  font-size: 2em;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Horizontal Movie List */
+.movie-list {
+  display: flex;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  gap: 0.2em;
+  padding-bottom: 1rem;
+ scroll-snap-type: x mandatory;
+}
+
+/* Scrollbar Styling */
+
+
+
+
+/* Movie Card */
+.movie-card_home {
+  flex: 0 0 auto;
+  width: 420px;
+  height: 300px;
+  border-radius: 10px;
+  padding: 1em;
+  text-align: center;
+  scroll-snap-align: start;
+
+}
+
+.movie-card_home img {
   width: 100%;
+ 
   border-radius: 12px;
 }
 
-.movie-title {
-  margin: 10px 0 4px;
-  font-size: 16px;
-  font-weight: 600;
+.movie-card_home h3 {
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
-.movie-date {
-  color: #aaa;
-  font-size: 14px;
+.movie-card_home p {
+  font-size: 0.9rem;
+  color: gold;
 }
 
-.cinema-header {
+/* Cinema Near You Section */
+.see-more {
+  background: none;
+  border: none;
+  color: rgb(132, 130, 130);
+font-size: 14px;
+  cursor: pointer;
+  margin-top: 0.5em;
+  display: block;
+}
+
+.cinema-near-you {
+  margin: 1.5rem;
+}
+
+.cinema-near-you-heading {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+    justify-content: space-between;
+  padding: 0 1em;
+  gap: 8em;
 }
 
-.see-all {
-  font-size: 14px;
-  color: #888;
+.cinema-near-you h2 {
+  font-size: 1em;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .cinema-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 12px;
+  gap: 1.5rem;
 }
 
 .cinema-card {
+  border-radius: 20px;
   display: flex;
+  gap: 1rem;
+  padding: 1rem;
   align-items: center;
-  gap: 12px;
 }
 
-.cinema-card img {
-  width: 56px;
-  height: 56px;
+.cinema-logo {
+  width: 60px;
+  height: 60px;
   border-radius: 12px;
   object-fit: cover;
 }
 
+.cinema-info {
+  flex: 1;
+}
+
 .cinema-info h3 {
-  margin: 4px 0 2px;
-  font-size: 16px;
+  margin: 0.25rem 0;
 }
 
-.cinema-info p {
-  color: #aaa;
-  font-size: 13px;
-  margin: 0;
-}
-
-.cinema-location {
-  display: flex;
-  align-items: center;
-  color: #4da3ff;
-  font-size: 13px;
-  gap: 4px;
-}
-
-.cinema-rating {
-  display: flex;
-  align-items: center;
+.rating-container {
+  font-size: 0.9rem;
   color: gold;
-  font-weight: 500;
-  font-size: 15px;
-  margin-left: auto;
-  gap: 4px;
 }
 
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #1f1f1f;
-  display: flex;
-  justify-content: space-around;
-  padding: 14px 0;
-  font-size: 22px;
-  color: #666;
+/* Scrollbar for horizontal movie list */
+.movie-list::-webkit-scrollbar {
+  height: 8px;
 }
 
-.bottom-nav .active {
-  color: #4da3ff;
+.movie-list::-webkit-scrollbar-thumb {
+  background-color: #2b2d3a;
+  border-radius: 4px;
 }
+
+
+
+
 
 
 /**************************_____footer___________________************************/
-
-
   .footer{
-   
+     background-color: #12151d;
   text-align: center;
-  padding: 2em;
+  padding: 1rem;
   position: fixed;
   bottom: 0;
   width: 100%;
   z-index: 1000;
- background-color: #121212;
+width: 480px;
+  
  display: flex;
  justify-content: space-evenly;
  align-items: center;
+  }
+
+  /***********************************''''back arrow*********************************/
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+ 
+  align-items: baseline;
+}
+
+
+.back-arrow {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+ 
+   
  
 }
- .search-bar{
-    margin: 2em 1em;
-  }
-  .search-input{
-   height: 1.3em;
-    border: black 2px solid;
-    outline: none;
-    resize: none;
-    background-color: blue;
-    color:white;
-  }
- 
+
+.back-arrow svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+
+
+
+
+
+
+

@@ -2,19 +2,29 @@
   background-color: #12151d;
   color: white;
   padding: 40px 20px;
-  max-width: 450px;
-  margin: 0 auto;
-  border-radius: 20px;
+ 
+  margin:0 auto;
+
   font-family: 'Arial', sans-serif;
+  width: 480px;
+height: 100vh;
 }
-
-h2 {
+.bookticket_heading {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  padding-top: 1em;
+  margin-left: 4em;
 }
 
-.form-group {
-  margin-bottom: 20px;
+.form-group_date{
+  
+  
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+
 }
 
 label {
@@ -35,15 +45,19 @@ select {
 
 .form-row {
   display: flex;
-  gap: 20px;
+ gap: 4em;
+justify-content: center;
+  padding-top: 1em;
 }
 
 .screen {
-  width: 100%;
-  height: 30px;
-  background: linear-gradient(to right, #4f9cff, #3c91ff);
-  border-radius: 0 0 30px 30px;
-  margin: 30px 0 20px;
+ 
+  background: linear-gradient(to top,transparent, #FFFFFF,  #54A8E5 );
+  border-radius:  30px 30px 0 0;
+  margin: 20px 0 20px;
+ width: 100%;
+ height: 88px;
+
 }
 
 .seats-grid {
@@ -52,6 +66,7 @@ select {
   gap: 12px;
   align-items: center;
   margin-bottom: 30px;
+  padding-top: 3em;
 }
 
 .seat-row {
@@ -62,10 +77,12 @@ select {
 .seat {
   width: 30px;
   height: 30px;
-  border-radius: 8px;
-  background-color: #2a2e3b;
+ background-color: #2a2e3b;
   cursor: pointer;
   transition: 0.2s;
+ background-color: transparent;
+border: 1px solid #aaa;
+  border-radius: 6px;
 }
 
 .seat:hover {
@@ -96,19 +113,26 @@ select {
   border-radius: 5px;
   margin-right: 6px;
 }
-
+.check{
+  padding-top: 2em;
+}
 .checkout-btn {
   width: 100%;
-  padding: 14px;
-  background-color: #4f9cff;
+ background-color: #4f9cff;
   color: white;
   border: none;
-  border-radius: 14px;
-  font-size: 16px;
+ font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 30px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
 }
 
 .checkout-btn:hover {
   background-color: #3c91ff;
 }
+
+
+

@@ -1,17 +1,21 @@
 .bookmarks-container {
   text-align: center;
   padding: 20px;
+  background-color: #1c1d22;;
+  width: 480px;
+  height: 100vh;
+  margin: 0 auto;
 }
 
 .movies-grid {
   display: flex;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   gap: 20px;
   justify-content: center;
 }
 
 .movie-card {
-  width: 200px;
+  width: 100%;
   text-align: center;
 }
 

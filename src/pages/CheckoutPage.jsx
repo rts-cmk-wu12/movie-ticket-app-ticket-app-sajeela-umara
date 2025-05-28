@@ -32,9 +32,22 @@ const CheckoutPage = () => {
 
   return (
     <div className="checkout-container">
-      <h2 className="checkout-title">Checkout</h2>
-
-        <div className="payment-method">
+      <div className="header">
+  <button className="back-arrow" onClick={() => navigate(-1)} aria-label="Go back">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="white"
+      viewBox="0 0 24 24"
+    >
+      <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+    </svg>
+  </button>
+  <h2 className='checkout_heading'>Checkout</h2>
+</div>
+      <p className='card_info'> Payment Method</p>
+      <div className="payment-method">
         <div className="card">
           <div className="card-header">
             <img src="./Business_Debit_Card_Image.png" alt="card" className="card-bg" />
@@ -75,8 +88,15 @@ const CheckoutPage = () => {
       {showSuccess && (
         <div className="popup-overlay">
           <div className="popup-container">
-            <h2>🎉 Payment Successful!</h2>
-            <button className="view-eticket-btn" onClick={handleViewETicket}>See E-Ticket</button>
+            <h2
+            className='popup_container_heading' >Your payment was<br></br> successful</h2>
+            <p className="popup-description_p">
+              Adele is a Scottish heiress whose extremely<br></br>
+              wealthy family owns estates and grounds.<br></br>
+              When she was a teenager. Read More
+            </p>
+
+            <button className="download_button" onClick={handleViewETicket}>See E-Ticket</button>
           </div>
         </div>
       )}

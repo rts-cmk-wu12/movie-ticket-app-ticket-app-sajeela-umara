@@ -1,8 +1,7 @@
-
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from "../components/footer.jsx";
+import { CiSearch } from "react-icons/ci";
 
 const ExploreMovie = () => {
   const [movies, setMovies] = useState([]);
@@ -11,6 +10,8 @@ const ExploreMovie = () => {
   const [loading, setLoading] = useState(true);
   const [showAll, setShowAll] = useState(false);
   const [showAllRecommendations, setShowAllRecommendations] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showSearchInput, setShowSearchInput] = useState(false); // Toggle state
 
   useEffect(() => {
     const fetchTopRatedMovies = async () => {
@@ -46,7 +47,7 @@ const ExploreMovie = () => {
           method: 'GET',
           headers: {
             accept: 'application/json',
-            Authorization:'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MzZjZTNlNzc3OWM0NmM2YWE0NGRiOGQ1NzFiZDMzZCIsIm5iZiI6MTczNjc1NTk5MC4wODYwMDAyLCJzdWIiOiI2Nzg0Y2IxNmFiYWJiYmEwNDBiYjc0YmYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.BXEotnU2oQlH1c1I7xwdpCK6bOAQwwP6lkVZDN_wCb4'
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MzZjZTNlNzc3OWM0NmM2YWE0NGRiOGQ1NzFiZDMzZCIsIm5iZiI6MTczNjc1NTk5MC4wODYwMDAyLCJzdWIiOiI2Nzg0Y2IxNmFiYWJiYmEwNDBiYjc0YmYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.BXEotnU2oQlH1c1I7xwdpCK6bOAQwwP6lkVZDN_wCb4'
           }
         };
 
@@ -65,99 +66,118 @@ const ExploreMovie = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
-  const displayedMovies = showAll ? movies : movies.slice(0, 6);
+  const filteredMovies = movies.filter(movie =>
+    movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+  const displayedMovies = showAll ? filteredMovies : filteredMovies.slice(0, 5);
   const displayedRecommendations = showAllRecommendations
     ? recommendedMovies
-    : recommendedMovies.slice(0, 6);
+    : recommendedMovies.slice(0, 5);
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Top Rated Movies</h1>
 
-      {movies.length > 6 && (
-        <div style={{ marginTop: '20px', textAlign: 'center' }}>
-          <button
-            onClick={() => setShowAll(!showAll)}
-            style={{
-              padding: '10px 20px',
-              fontSize: '16px',
-              borderRadius: '8px',
-              border: 'none',
-              backgroundColor: '#007BFF',
-              color: '#fff',
-              cursor: 'pointer'
-            }}
+    <div className="explore-container">
+      <div className="explore-header">
+
+        <button className="back-arrow" onClick={() => navigate(-1)} aria-label="Go back">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="white"
+            viewBox="0 0 24 24"
           >
-            {showAll ? 'Show Less' : 'Show More'}
-          </button>
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+          </svg>
+        </button>
+        <h2>Explore Movie</h2>
+        
+        <div className="search-wrapper_explore">
+          {showSearchInput && (
+            <input
+              type="text"
+              className="search-input_explore"
+              placeholder="Search movies..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          )}
+          <i className="search-icon_explore" onClick={() => setShowSearchInput(!showSearchInput)}>
+            <CiSearch />
+          </i>
         </div>
-      )}
-
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
-        {displayedMovies.map(movie => (
-          <div key={movie.id} style={{ width: '200px', textAlign: 'center' }}>
-            <Link to={`/movies/${movie.id}`} style={{ textDecoration: 'none', color: 'black' }}>
-              <img
-                src={movie.poster_path
-                  ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                  : 'https://via.placeholder.com/200x300?text=No+Image'}
-                alt={movie.title}
-                style={{ width: '100%', borderRadius: '10px' }}
-              />
-              <h3>{movie.title}</h3>
-              <p>Rating: {movie.vote_average}</p>
-            </Link>
-          </div>
-        ))}
       </div>
 
-      {/* Recommendations Section */}
-      {recommendedMovies.length > 0 && (
-        <>
-          <h2>Recommended Movies</h2>
+      <div className="toggle-tabs">
+        <div className="toggle-tab active">Now Showing</div>
+        <Link to="/" className="toggle-tab">
+          Upcoming
+        </Link>
+      </div>
 
-          {recommendedMovies.length > 6 && (
-            <div style={{ marginTop: '20px', textAlign: 'center' }}>
-              <button
-                onClick={() => setShowAllRecommendations(prev => !prev)}
-                style={{
-                  padding: '10px 20px',
-                  fontSize: '16px',
-                  borderRadius: '8px',
-                  border: 'none',
-                  backgroundColor: 'blue',
-                  color: '#fff',
-                  cursor: 'pointer'
-                }}
-              >
-                {showAllRecommendations ? 'See Less' : 'See More'}
-              </button>
+      <section>
+        <div className='section-title-first'>
+          <h2 className="section-title">Top Movies</h2>
+          {filteredMovies.length > 6 && (
+            <div className="see-more-explore" onClick={() => setShowAll(!showAll)}>
+              {showAll ? 'See Less' : 'See More'}
             </div>
           )}
+        </div>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
-            {displayedRecommendations.map(movie => (
-              <div key={movie.id} style={{ width: '200px', textAlign: 'center' }}>
-                <Link to={`/movies/${movie.id}`} style={{ textDecoration: 'none', color: 'black' }}>
-                  <img
-                    src={movie.poster_path
-                      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                      : 'https://via.placeholder.com/200x300?text=No+Image'}
-                    alt={movie.title}
-                    style={{ width: '100%', borderRadius: '10px' }}
-                  />
-                  <h3>{movie.title}</h3>
-                  <p>Rating: {movie.vote_average}</p>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
-      <Footer/>
+        <div className="movies-grid">
+
+          {displayedMovies.map(movie => (
+            <div className="movie-card" key={movie.id}>
+              <Link to={`/movies/${movie.id}`} >
+                <img className='movie-poster'
+                  src={movie.poster_path
+                    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                    : 'https://via.placeholder.com/200x300?text=No+Image'}
+                  alt={movie.title}
+                />
+                <h3>{movie.title}</h3>
+                <p>⭐ {movie.vote_average}</p>
+              </Link>
+            </div>
+
+          ))}
+        </div>
+      </section>
+      <section>
+        {recommendedMovies.length > 0 && (
+          <>
+            <div className='section-title-first'>
+              <h2 className="section-title">Recommended</h2>
+              {recommendedMovies.length > 6 && (
+                <div className="see-more-explore" onClick={() => setShowAllRecommendations(!showAllRecommendations)}>
+                  {showAllRecommendations ? 'See Less' : 'See More'}
+                </div>
+              )}
+            </div>
+
+            <div className="movies-grid">
+              {displayedRecommendations.map(movie => (
+                <div className="movie-card-recommended" key={movie.id}>
+                  <Link to={`/movies/${movie.id}`} style={{ textDecoration: 'none', color: 'white' }}>
+                    <img
+                      src={movie.poster_path
+                        ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                        : 'https://via.placeholder.com/200x300?text=No+Image'}
+                      alt={movie.title}
+                    />
+                    <h3>{movie.title}</h3>
+                    <p>⭐ {movie.vote_average}</p>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </section>
+      <Footer />
     </div>
   );
 };
 
 export default ExploreMovie;
-

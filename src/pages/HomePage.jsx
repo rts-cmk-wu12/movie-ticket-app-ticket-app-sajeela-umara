@@ -11,6 +11,7 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const [cinemas, setCinemas] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [showAllCinemas, setShowAllCinemas] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,13 +41,16 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container">
-      <header className="header">
-        <h1>Welcome back, <span className="username">User</span></h1>
-        <img className="profile-pic" src="profile.jpg" alt="Profile" />
+    <section className="home-container_section">
+      <header className="header_profile">
+        <div>
+        <h1>Welcome back,</h1>
+        <span className="username">Sajeela-Umara</span>
+        </div>
+        <img className="profile-pic" src="public/il_fullxfull.5778264946_26kb.webp" alt="Profile" />
       </header>
 
-      <div className="search-bar">
+      <div className="search-bar-home">
         <input
           type="text"
           placeholder="Search for movies, cinemas..."
@@ -54,14 +58,14 @@ const Home = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSearch()}
         />
-        <button onClick={handleSearch}>Search</button>
+        
       </div>
 
       <section className="coming-soon">
         <h2>Coming Soon</h2>
         <div className="movie-list">
           {movies.map((movie) => (
-            <div key={movie.id} className="movie-card">
+            <div key={movie.id} className="movie-card_home">
               <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
               <h3>{movie.title}</h3>
               <p>{movie.release_date}</p>
@@ -71,35 +75,49 @@ const Home = () => {
       </section>
 
       <section className="cinema-near-you">
-        <h2>Cinema Near You</h2>
+        <div className="cinema-near-you-heading">
+          <h2>Cinema Near You</h2>
+          <button
+            className="see-more"
+            onClick={() => setShowAllCinemas(!showAllCinemas)}
+          >
+            {showAllCinemas ? "See Less" : "See More"}
+          </button>
+        </div>
         {cinemas.length > 0 ? (
-          <div className="cinema-list">
-            {cinemas.map((cinema, index) => {
-              const cinemaName = cinema.tags?.name || "Unknown Cinema";
-              const cinemaImageUrl = `https://source.unsplash.com/300x200/?cinema,${encodeURIComponent(cinemaName)}`;
+          <>
+            <div className="cinema-list">
+              {cinemas
+                .slice(0, showAllCinemas ? cinemas.length : 2)
+                .map((cinema, index) => {
+                  const cinemaName = cinema.tags?.name || "Unknown Cinema";
+                  const cinemaImageUrl = `https://source.unsplash.com/300x200/?cinema,${encodeURIComponent(cinemaName)}`;
 
-              return (
-                <div key={index} className="cinema-card">
-                  <img src={cinemaImageUrl} alt={cinemaName} className="cinema-logo" />
-                  <div className="cinema-info">
-                    <p><strong>Distance:</strong> {Math.floor(Math.random() * 10) + 1} km</p>
-                    <h3>{cinemaName}</h3>
-                    <p><strong>Closing Time:</strong> {cinema.tags?.opening_hours || "Not Available"}</p>
-                  </div>
-                  <div className="rating-container">
-                    <p><strong>Rating:</strong> ★★★★☆ </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                  return (
+                    <div key={index} className="cinema-card">
+                      <img src={cinemaImageUrl} alt={cinemaName} className="cinema-logo" />
+                      <div className="cinema-info">
+                        <p><strong>Distance:</strong> {Math.floor(Math.random() * 10) + 1} km</p>
+                        <h3>{cinemaName}</h3>
+                        <p><strong>Closing Time:</strong> {cinema.tags?.opening_hours || "Not Available"}</p>
+                      </div>
+                      <div className="rating-container">
+                        <p><strong>Rating:</strong> ★★★★☆ </p>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+
+
+          </>
         ) : (
           <p>No cinemas found. Try adjusting your location settings!</p>
         )}
       </section>
 
       <Footer />
-    </div>
+    </section>
   );
 };
 

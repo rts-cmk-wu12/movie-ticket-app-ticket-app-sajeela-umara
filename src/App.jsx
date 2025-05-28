@@ -13,10 +13,12 @@ import BookmarksPage from './pages/BookmarksPage.jsx';
 import './App.css';
 import './style/BookTicket.css';
 import './style/CheckoutPage.css';
- import './style/pop-up.css';
+ import './style/download-pop-up.css';
  import './style/eticket.css';
  import './style/ticket-popup.css';
  import './style/bookmark.css';
+ import './style/moviedetail.css';
+import './style/explore.css';
 
 function App() {
 
