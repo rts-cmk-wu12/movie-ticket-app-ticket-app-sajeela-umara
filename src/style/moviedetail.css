@@ -5,27 +5,17 @@
    background-color: #12151d;
 }
 
-
-
-
 .header__section {
    display: flex;
   justify-content: space-between;
   align-items: center;
+
   font-size: 12px;
   font-weight: bold;
-margin: 0 2em;
-
+margin: 0 1em;
 }
 
-.header__section h1 {
-  font-size: 28px;
-  font-weight: bold;
-  color: white;
- flex: 1;
- text-align: center;
- margin: 0.6em 0;
-}
+
 .bookmark svg {
   color: grey;
   transition: color 0.3s;

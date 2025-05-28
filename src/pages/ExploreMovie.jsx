@@ -78,19 +78,21 @@ const ExploreMovie = () => {
 
     <div className="explore-container">
       <div className="explore-header">
+<button className="back-arrow" onClick={() => navigate('/')} aria-label="Go to homepage">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="white"
+    viewBox="0 0 24 24"
+  >
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+  </svg>
+</button>
+<h2>Explore Movie</h2>
 
-        <button className="back-arrow" onClick={() => navigate(-1)} aria-label="Go back">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="white"
-            viewBox="0 0 24 24"
-          >
-            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-          </svg>
-        </button>
-        <h2>Explore Movie</h2>
+
+    
         
         <div className="search-wrapper_explore">
           {showSearchInput && (

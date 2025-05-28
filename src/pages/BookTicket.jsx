@@ -223,7 +223,9 @@ const BookTicket = () => {
         </div>
       </div>
 
-      <div className="screen"></div>
+      <div className="screen">
+        <img src='/Screen.svg' alt='screen'></img>
+      </div>
 
       <div className="seats-grid">
         {Array.from({ length: 6 }, (_, row) => (

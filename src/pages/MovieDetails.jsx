@@ -77,7 +77,8 @@ const MovieDetails = () => {
     <div className="movie-detail">
       <div className='header__section'>
 
-        <button className="back-arrow" onClick={() => navigate(-1)} aria-label="Go back">
+       <button className="back-arrow" onClick={() => navigate('/')} aria-label="Go to homepage">
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -88,7 +89,7 @@ const MovieDetails = () => {
             <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
           </svg>
         </button>
-        <h2 className='eticket_heading'>Details Movie</h2>
+        <h2 className='deatail_heading'>Details Movie</h2>
         <div className='bookmark'>
           <FaRegBookmark
             style={{ color: isBookmarked ? 'blue' : 'grey', cursor: 'pointer', width: '30px', height: '30px' }}

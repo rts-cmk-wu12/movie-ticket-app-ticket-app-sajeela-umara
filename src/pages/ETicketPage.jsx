@@ -108,7 +108,7 @@ const ETicketPage = () => {
         <div className="popup-overlay">
 
           <div className="popup_container">
-            <img src="public/icon-downloaded.png" alt="" />
+            <img className="popup_image" src="public/icon-downloaded.png" alt="" />
             <h2 className="popup_container_heading">Your ticket has been<br></br> downloaded</h2>
             <p className="popup_container_p">Adele is a Scottish heiress whose extremely<br></br>
               wealthy family owns estates and grounds.<br></br>

@@ -88,6 +88,7 @@ const CheckoutPage = () => {
       {showSuccess && (
         <div className="popup-overlay">
           <div className="popup-container">
+            <img src="public/Shield Done.png" alt="" />
             <h2
             className='popup_container_heading' >Your payment was<br></br> successful</h2>
             <p className="popup-description_p">
