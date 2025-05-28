@@ -1,0 +1,157 @@
+
+
+.eticket-page {
+  background-color: #1c1d22;
+  min-height: 100vh;
+  padding: 20px;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+
+  width: 480px;
+  margin: 0 auto;
+}
+.eticket_header{
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+
+}
+ .eticket_heading{
+  padding-left: 5em;
+ 
+  margin-bottom: 20px;
+  padding-top: 1em;
+
+ }
+.eticket-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.eticket-instruction{
+  margin: 1em ;
+}
+.eticket-instruction h3 {
+  font-size: 18px;
+  font-weight: bold;
+  
+}
+
+.eticket-instruction p {
+  color: #ccc;
+
+  margin-bottom: 3em;
+}
+
+.eticket-card {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  width: 300px;
+  position: relative;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.eticket-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.e-ticket-label {
+  color: #f4436c;
+}
+
+.eticket-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+
+
+.barcode-section {
+  margin-top: 15px;
+  width: 100%;
+  svg {
+    width: -webkit-fill-available;
+  }
+}
+
+.download-btn {
+  background-color: #3fa9f5;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 3px 6px rgba(63, 169, 245, 0.4);
+}
+
+.download-btn:hover {
+  background-color: #2d8cd3;
+  box-shadow: 0 4px 10px rgba(45, 140, 211, 0.6);
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+.popup_container {
+
+  background-color:#54A8E5;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  color: #000;
+  animation: slideUp 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  width: 480px;
+}
+
+.popup button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #3fa9f5;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 3px 6px rgba(63, 169, 245, 0.4);
+}
+
+.popup button:hover {
+  background-color: #2d8cd3;
+  box-shadow: 0 4px 10px rgba(45, 140, 211, 0.6);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

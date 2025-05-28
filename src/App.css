@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background-color: white;
+margin: 0;
+padding: 0;
+}
+
+/*.......................................home.css............................................*/
+
+
+.home-container_section {
+  margin: 0 auto;
+  width: 480px;
+  overflow: hidden;
+  background-color: #12151d;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header_profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+}
+
+.username {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Search Bar */
+.search-bar-home {
+  display: flex;
+  align-items: center;
+  margin: 0 1.5rem 0.1em;
+  background-color: #1e2230;
+  padding: 0.75rem 1em;
+  border-radius: 15px;
+}
+
+.search-bar-home input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar-home button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+/* Coming Soon Section */
+.coming-soon {
+ margin: 0 1em;
+  
+}
+
+.coming-soon h2 {
+  font-size: 2em;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Horizontal Movie List */
+.movie-list {
+  display: flex;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  gap: 0.2em;
+  padding-bottom: 1rem;
+ scroll-snap-type: x mandatory;
+}
+
+/* Scrollbar Styling */
+
+
+
+
+/* Movie Card */
+.movie-card_home {
+  flex: 0 0 auto;
+  width: 420px;
+  height: 300px;
+  border-radius: 10px;
+  padding: 1em;
+  text-align: center;
+  scroll-snap-align: start;
+
+}
+
+.movie-card_home img {
+  width: 100%;
+ 
+  border-radius: 12px;
+}
+
+.movie-card_home h3 {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.movie-card_home p {
+  font-size: 0.9rem;
+  color: gold;
+}
+
+/* Cinema Near You Section */
+.see-more {
+  background: none;
+  border: none;
+  color: rgb(132, 130, 130);
+font-size: 14px;
+  cursor: pointer;
+  margin-top: 0.5em;
+  display: block;
+}
+
+.cinema-near-you {
+  margin: 1.5rem;
+}
+
+.cinema-near-you-heading {
+  display: flex;
+    justify-content: space-between;
+  padding: 0 1em;
+  gap: 8em;
+}
+
+.cinema-near-you h2 {
+  font-size: 1em;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.cinema-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cinema-card {
+  border-radius: 20px;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+.cinema-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.cinema-info {
+  flex: 1;
+}
+
+.cinema-info h3 {
+  margin: 0.25rem 0;
+}
+
+.rating-container {
+  font-size: 0.9rem;
+  color: gold;
+}
+
+/* Scrollbar for horizontal movie list */
+.movie-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.movie-list::-webkit-scrollbar-thumb {
+  background-color: #2b2d3a;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+/**************************_____footer___________________************************/
+  .footer{
+     background-color: #12151d;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+width: 480px;
+  
+ display: flex;
+ justify-content: space-evenly;
+ align-items: center;
+  }
+
+  /***********************************''''back arrow*********************************/
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+ 
+  align-items: baseline;
+}
+
+
+.back-arrow {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+ 
+   
+ 
+}
+
+.back-arrow svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+
+
+
+
+
+
+

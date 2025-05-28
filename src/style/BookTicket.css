@@ -1,0 +1,134 @@
+.ticket-container {
+  background-color: #12151d;
+  color: white;
+  padding: 40px 20px;
+ 
+  margin:0 auto;
+
+  font-family: 'Arial', sans-serif;
+  width: 480px;
+
+}
+.bookticket_heading {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 1em;
+  margin-left: 4em;
+}
+
+.form-group_date{
+  
+  
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  background-color: #1f232d;
+  color: white;
+  border: 1px solid #2a2e3b;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.form-row {
+  display: flex;
+ gap: 4em;
+justify-content: center;
+  padding-top: 1em;
+}
+
+.screen {
+ display: flex;
+ justify-content: center;
+ margin-top: 1rem;
+}
+
+.seats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 30px;
+ 
+}
+
+.seat-row {
+  display: flex;
+  gap: 10px;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+ background-color: #2a2e3b;
+  cursor: pointer;
+  transition: 0.2s;
+ background-color: transparent;
+border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+.seat:hover {
+  opacity: 0.8;
+}
+
+.seat.selected {
+  background-color: #4f9cff;
+}
+
+.seat.reserved {
+  background-color: #ff4d4d;
+  cursor: not-allowed;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-around;
+  color: #b0b0b0;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.legend span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  margin-right: 6px;
+}
+.check{
+  padding-top: 2em;
+}
+.checkout-btn {
+  width: 100%;
+ background-color: #4f9cff;
+  color: white;
+  border: none;
+ font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 30px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  background-color: #3c91ff;
+}
+
+
+
